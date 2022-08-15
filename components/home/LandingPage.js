@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 
 const LandingPageWrapper = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('xl')]: {
-    height: '850px',
+    height: '840px',
     maxHeight: '1000px',
   },
 }));

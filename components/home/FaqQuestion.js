@@ -10,7 +10,7 @@ const FaqQuestions = ({ title, description }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <Accordion sx={{ boxShadow: 'none', fontFamily: 'Inter' }}>
+    <Accordion sx={{ fontFamily: 'Inter' }}>
       <AccordionSummary
         onClick={() => (isOpen ? setIsOpen(false) : setIsOpen(true))}
         expandIcon={

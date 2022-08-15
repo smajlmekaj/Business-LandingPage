@@ -8,8 +8,8 @@ const GetstartedWrapper = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
     border: '1px solid rgba(0, 0, 0, 0.2)',
     borderRadius: '20px',
-    padding: '0',
-    margin: '0 100px 0 50px',
+    marginLeft: '60px',
+    maxWidth: '1300px',
   },
 }));
 
@@ -32,23 +32,27 @@ const LeftSideWrapper = styled('div')(({ theme }) => ({
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',
-    paddingLeft: '100px',
+    paddingLeft: '61px',
   },
 }));
 
 const StyledImage = styled('img')(({ theme }) => ({
   width: '100%',
-  maxWidth: '359px',
+  maxWidth: '480px',
   height: '280px',
-  borderRadius: '20px',
+  borderRadius: '20px ',
   [theme.breakpoints.up('lg')]: {
     width: '100%',
-    paddingLeft: '70px',
+    borderRadius: '0 20px 20px 0',
+
     height: '400px',
+    objectFit: 'cover',
+    marginLeft: 'auto',
   },
   [theme.breakpoints.up('xl')]: {
+    borderRadius: '0 20px 20px 0',
+
     width: '100%',
-    paddingLeft: '100px',
     height: '400px',
   },
 }));
@@ -66,6 +70,7 @@ const StyledParagraph = styled('div')(({ theme }) => ({
   fontWight: '400',
   fontSize: '17px',
   margin: '20px 0',
+  lineHeight: '24px',
   textAlign: ' center',
   color: '#667085',
   [theme.breakpoints.up('lg')]: {

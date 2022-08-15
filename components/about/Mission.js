@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { Box } from '@mui/material';
+import { Grid } from '@mui/material';
 import React from 'react';
+import { Container } from '@mui/material';
 
 const MissionWrapper = styled.div`
   text-align: center;
@@ -17,9 +18,20 @@ const MissionWrapper = styled.div`
     font-size: 15px;
     color: #667085;
   }
+  .MuiContainer-root {
+    height: 100% !important;
+  }
+  .MuiGrid-container {
+    height: 100% !important;
+    padding: 0 30px !important;
+    @media (max-width: 960px) {
+      padding: 0px !important;
+    }
+  }
 `;
 
 const TopWrapper = styled('div')(({ theme }) => ({
+  padding: '10px',
   margin: ' 0 0 40px 0',
   h2: {
     fontWight: '600',
@@ -39,63 +51,61 @@ const TopWrapper = styled('div')(({ theme }) => ({
   },
 }));
 
-const FlexOfTwo = styled('div')(({ theme }) => ({
-  margin: '96px 0',
-  p: {
-    margin: ' 20px 0',
-  },
-  [theme.breakpoints.up('lg')]: {
-    display: 'flex',
-    p: {
-      fontSize: '18px',
-    },
-    h1: {
-      fontSize: '30px',
-    },
-  },
-}));
-const FlexOfTwoReverse = styled('div')(({ theme }) => ({
+const GridWrapper = styled('div')(({ theme }) => ({
   margin: '50px 0',
-  p: {
-    margin: ' 20px 0',
-  },
   [theme.breakpoints.up('lg')]: {
-    display: 'flex',
-    flexDirection: 'row-reverse',
-    p: {
-      fontSize: '18px',
-    },
-    h1: {
-      fontSize: '30px',
-    },
+    position: 'relative',
+    height: '560px',
+    margin: '96px 0',
   },
 }));
 
-const SideFlexWrap = styled('div')(({ theme }) => ({
+const ImageWrapperRight = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    textAlign: 'left',
-    padding: '0 20px',
+    maxWidth: '50%',
+    position: 'absolute',
+    top: '0',
+    left: '50%',
+    width: '100%',
+    height: '100%',
+  },
+}));
+
+const ImageWrapperLeft = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('lg')]: {
+    maxWidth: '50%',
+    position: 'absolute',
+    top: '0',
+    right: '50%',
+    height: '100%',
+    width: '100%',
   },
 }));
 
 const StyledImage = styled('img')(({ theme }) => ({
   width: '100%',
-  maxWidth: '720px',
-  borderRadius: '10px',
   marginTop: '10px',
 
+  [theme.breakpoints.down('lg')]: {
+    padding: '10px',
+    borderRadius: '20px',
+  },
   [theme.breakpoints.up('lg')]: {
-    margin: '20px',
+    margin: '0',
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
   },
 }));
 
 const FlexOfTwoIcons = styled.div`
+  padding: 5px 0;
   display: flex;
   align-items: center;
+`;
+
+const IconsList = styled.div`
+  margin: 30px 20px 20px 20px;
 `;
 
 const StyledIcons = styled.img`
@@ -103,6 +113,18 @@ const StyledIcons = styled.img`
   height: 25px;
   margin-right: 20px;
   margin-bottom: 10px;
+`;
+
+const ContentWrapper = styled.div`
+  padding-right: 60px;
+  text-align: left;
+`;
+const ContentWrapperMiddle = styled.div`
+  padding-left: 90px;
+  text-align: left;
+  @media (max-width: 1200px) {
+    padding-left: 0;
+  }
 `;
 
 const Mission = () => {
@@ -117,89 +139,156 @@ const Mission = () => {
         </p>
       </TopWrapper>
       <div>
-        <FlexOfTwo>
-          <SideFlexWrap>
-            <h1>Share team inboxes</h1>
-            <p>
-              Whether you have a team of 2 or 200, our shared team
-              inboxes keep everyone on the same page and in the loop.
-            </p>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+        <GridWrapper>
+          <Container maxWidth="xl">
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              spacing={4}
+            >
+              <Grid item xs={12} lg={6}>
+                <ContentWrapper>
+                  <h1>Share team inboxes</h1>
+                  <p>
+                    Whether you have a team of 2 or 200, our shared
+                    team inboxes keep everyone on the same page and in
+                    the loop.
+                  </p>
+                  <IconsList>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p>Leverage automation to move fast</p>
-            </FlexOfTwoIcons>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>Leverage automation to move fast</p>
+                    </FlexOfTwoIcons>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p> Always give customers a human to chat to</p>
-            </FlexOfTwoIcons>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p> Always give customers a human to chat to</p>
+                    </FlexOfTwoIcons>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p>Automate customer support and close leads faster</p>
-            </FlexOfTwoIcons>
-          </SideFlexWrap>
-          <StyledImage src="/imgs/Share.png" alt="some img" />
-        </FlexOfTwo>
-        <FlexOfTwoReverse>
-          <SideFlexWrap>
-            <h1>Deliver instant answers</h1>
-            <p>
-              An all-in-one customer service platform that helps you
-              balance everything your customers need to be happy.
-            </p>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>
+                        Automate customer support and close leads
+                        faster
+                      </p>
+                    </FlexOfTwoIcons>
+                  </IconsList>
+                </ContentWrapper>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <ImageWrapperRight>
+                  <StyledImage src="/imgs/Share.png" alt="some img" />
+                </ImageWrapperRight>
+              </Grid>
+            </Grid>
+          </Container>
+        </GridWrapper>
+        <GridWrapper>
+          <Container maxWidth="xl">
+            <Grid
+              container
+              alignItems="center"
+              direction="row-reverse"
+            >
+              <Grid item xs={12} lg={6}>
+                <ContentWrapperMiddle>
+                  <h1>Deliver instant answers</h1>
+                  <p>
+                    An all-in-one customer service platform that helps
+                    you balance everything your customers need to be
+                    happy.
+                  </p>
+                  <IconsList>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p> Keep your customers in the loop with live chat</p>
-            </FlexOfTwoIcons>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>
+                        Keep your customers in the loop with live chat
+                      </p>
+                    </FlexOfTwoIcons>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p>Embed help articles right on your website</p>
-            </FlexOfTwoIcons>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>Embed help articles right on your website</p>
+                    </FlexOfTwoIcons>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p>
-                Customers never have to leave the page to find an
-                answer
-              </p>
-            </FlexOfTwoIcons>
-          </SideFlexWrap>
-          <StyledImage src="/imgs/Deliver.png" alt="some img" />
-        </FlexOfTwoReverse>
-        <FlexOfTwo>
-          <SideFlexWrap>
-            <h1>Manage your team with reports</h1>
-            <p>
-              Measure what matters with Untitled’s easy-to-use
-              reports. You can filter, export, and drilldown on the
-              data in a couple clicks.
-            </p>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>
+                        Customers never have to leave the page to find
+                        an answer
+                      </p>
+                    </FlexOfTwoIcons>
+                  </IconsList>
+                </ContentWrapperMiddle>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <ImageWrapperLeft>
+                  <StyledImage
+                    src="/imgs/Deliver.png"
+                    alt="some img"
+                  />
+                </ImageWrapperLeft>
+              </Grid>
+            </Grid>
+          </Container>
+        </GridWrapper>
+        <GridWrapper>
+          <Container maxWidth="xl">
+            <Grid
+              container
+              justifyContent="space-between"
+              alignItems="center"
+              spacing={2}
+            >
+              <Grid item xs={12} lg={6}>
+                <ContentWrapper>
+                  <h1>Manage your team with reports</h1>
+                  <p>
+                    Measure what matters with Untitled’s easy-to-use
+                    reports. You can filter, export, and drilldown on
+                    the data in a couple clicks.
+                  </p>
+                  <IconsList>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p>Filter, export, and drilldown on the data quickly</p>
-            </FlexOfTwoIcons>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>
+                        Filter, export, and drilldown on the data
+                        quickly
+                      </p>
+                    </FlexOfTwoIcons>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
 
-              <p>
-                Save, schedule, and automate reports to your inbox
-              </p>
-            </FlexOfTwoIcons>
-            <FlexOfTwoIcons>
-              <StyledIcons src="/imgs/Checkicon.png" />
-              <p>
-                Connect the tools you already use with 100+
-                integrations
-              </p>
-            </FlexOfTwoIcons>
-          </SideFlexWrap>
-          <StyledImage src="/imgs/Manage.png" alt="some img" />
-        </FlexOfTwo>
+                      <p>
+                        Save, schedule, and automate reports to your
+                        inbox
+                      </p>
+                    </FlexOfTwoIcons>
+                    <FlexOfTwoIcons>
+                      <StyledIcons src="/imgs/Checkicon.png" />
+                      <p>
+                        Connect the tools you already use with 100+
+                        integrations
+                      </p>
+                    </FlexOfTwoIcons>
+                  </IconsList>
+                </ContentWrapper>
+              </Grid>
+              <Grid item xs={12} lg={6}>
+                <ImageWrapperRight>
+                  <StyledImage
+                    src="/imgs/Manage.png"
+                    alt="some img"
+                  />
+                </ImageWrapperRight>
+              </Grid>
+            </Grid>
+          </Container>
+        </GridWrapper>
       </div>
     </MissionWrapper>
   );

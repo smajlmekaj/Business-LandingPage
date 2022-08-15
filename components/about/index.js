@@ -35,24 +35,29 @@ const StyledHeadingFive = styled.h5`
 
 const About = () => {
   return (
-    <Container maxWidth="xl">
+    <>
       <OurStory />
       <Mission />
-      <BottomWrapper>
-        <div>
-          <StyledNumber>400+</StyledNumber>
-          <StyledHeadingFive>Projects completed</StyledHeadingFive>
-        </div>
-        <div>
-          <StyledNumber>600%</StyledNumber>
-          <StyledHeadingFive>Return on investment</StyledHeadingFive>
-        </div>
-        <div>
-          <StyledNumber>10k</StyledNumber>
-          <StyledHeadingFive>Global downloads</StyledHeadingFive>
-        </div>
-      </BottomWrapper>
-    </Container>
+
+      <Container maxWidth="xl">
+        <BottomWrapper>
+          <div>
+            <StyledNumber>400+</StyledNumber>
+            <StyledHeadingFive>Projects completed</StyledHeadingFive>
+          </div>
+          <div>
+            <StyledNumber>600%</StyledNumber>
+            <StyledHeadingFive>
+              Return on investment
+            </StyledHeadingFive>
+          </div>
+          <div>
+            <StyledNumber>10k</StyledNumber>
+            <StyledHeadingFive>Global downloads</StyledHeadingFive>
+          </div>
+        </BottomWrapper>
+      </Container>
+    </>
   );
 };
 

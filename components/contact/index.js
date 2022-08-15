@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { TextField, Checkbox, Button } from '@material-ui/core';
 import { Field, Form, Formik } from 'formik';
 import { boolean, number, object, string } from 'yup';
-import MuiPhoneNumber from 'material-ui-phone-number';
+import MuiPhoneNumber from 'material-ui-phone-number-2';
 import { Box, Container, Typography } from '@mui/material';
 
 //
@@ -36,9 +36,13 @@ const MaterialFormWrapper = styled('div')(({ theme }) => ({
     },
   },
 
+  '.phone-container': {
+    width: '200px',
+  },
+
   [theme.breakpoints.up('lg')]: {
     margin: '64px 0 96px 0',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
 }));
 
@@ -66,6 +70,10 @@ const CheckedSpan = styled.div`
 `;
 
 const ImageWrapper = styled.div`
+  width: 576px;
+  height: 800px;
+
+  margin-left: 60px;
   @media (max-width: 1024px) {
     display: none;
   }
@@ -203,7 +211,13 @@ const MaterialForm = () => {
                   name="phone"
                   type="phone"
                   as={MuiPhoneNumber}
-                  regions={['europe', 'north-america']}
+                  regions={[
+                    'america',
+                    'europe',
+                    'asia',
+                    'oceania',
+                    'africa',
+                  ]}
                   defaultCountry={'us'}
                   value={values.phone}
                   onChange={(event) => setFieldValue('phone', event)}
@@ -252,7 +266,6 @@ const MaterialForm = () => {
                 </CheckedSpan>
 
                 <Button
-                  textTransform="inherit"
                   type="submit"
                   variant="contained"
                   size="small"
@@ -261,6 +274,7 @@ const MaterialForm = () => {
                     color: 'white',
                     margin: '20px 0',
                     padding: '12px 0',
+                    textTransform: 'inherit',
                   }}
                 >
                   Send message

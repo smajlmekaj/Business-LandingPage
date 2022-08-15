@@ -138,7 +138,7 @@ const Footer = () => {
             }}
           >
             <StyledParagraphSmall>
-              © 2077 Untitled UI. All rights reserved.
+              © 2022 Foodi. All rights reserved.
             </StyledParagraphSmall>
           </Grid>
           <Grid
