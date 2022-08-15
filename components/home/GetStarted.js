@@ -3,95 +3,86 @@ import { Container, Grid, Button } from '@mui/material';
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-const GetstartedWrapper = styled('div')(({ theme }) => ({
-  margin: '90px 0',
-  [theme.breakpoints.up('lg')]: {
-    border: '1px solid rgba(0, 0, 0, 0.2)',
-    borderRadius: '20px',
-    marginLeft: '60px',
-    maxWidth: '1300px',
-  },
-}));
+const GetstartedWrapper = styled.div`
+  margin: 90px 0;
+  border-radius: 20px;
+  max-width: 1300px;
 
-const GetstartedButtonWraper = styled.div``;
+  img {
+    width: 100%;
+    max-width: 480px;
+    height: 280px;
+    border-radius: 20px;
+  }
 
-const LeftSideWrapper = styled('div')(({ theme }) => ({
-  [theme.breakpoints.up('xs')]: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '20px',
-  },
+  @media (min-width: 1200px) {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-left: 60px;
 
-  [theme.breakpoints.up('md')]: {
-    margin: '0 30px 0 0',
-  },
+    img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      margin-left: auto;
+    }
+  }
+`;
 
-  [theme.breakpoints.up('lg')]: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    justifyContent: 'center',
-    paddingLeft: '61px',
-  },
-}));
+const LeftSideWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
 
-const StyledImage = styled('img')(({ theme }) => ({
-  width: '100%',
-  maxWidth: '480px',
-  height: '280px',
-  borderRadius: '20px ',
-  [theme.breakpoints.up('lg')]: {
-    width: '100%',
-    borderRadius: '0 20px 20px 0',
+  h2 {
+    font-weight: 600;
+    font-size: 30px;
+    color: #101828;
+  }
 
-    height: '400px',
-    objectFit: 'cover',
-    marginLeft: 'auto',
-  },
-  [theme.breakpoints.up('xl')]: {
-    borderRadius: '0 20px 20px 0',
+  p {
+    font-weight: 400;
+    font-size: 17px;
+    margin: 20px 0;
+    line-height: 24px;
+    text-align: center;
+    color: #667085;
+  }
 
-    width: '100%',
-    height: '400px',
-  },
-}));
-
-const StyledHeadingTwo = styled('h2')(({ theme }) => ({
-  fontWeight: '600',
-  fontSize: '30px',
-  color: '#101828',
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '40px',
-  },
-}));
-
-const StyledParagraph = styled('div')(({ theme }) => ({
-  fontWight: '400',
-  fontSize: '17px',
-  margin: '20px 0',
-  lineHeight: '24px',
-  textAlign: ' center',
-  color: '#667085',
-  [theme.breakpoints.up('lg')]: {
-    textAlign: ' left',
-  },
-}));
+  @media (min-width: 1200px) {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 61px;
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      text-align: left;
+    }
+  }
+`;
 
 const GetStarted = () => {
   return (
     <Container maxWidth="xl">
       <GetstartedWrapper>
-        <Grid container justifyContent="center" alignItems="center">
-          <Grid item xs={12} md={6}>
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          spacing={3}
+        >
+          <Grid item xs={12} md={7}>
             <LeftSideWrapper>
-              <StyledHeadingTwo>Give us a shot</StyledHeadingTwo>
-              <StyledParagraph>
+              <h2>Give us a shot</h2>
+              <p>
                 Our philisophy is simple — hire a team of diverse,
                 passionate people and foster a culture that empowers
                 you to do you best work. Read more about
-              </StyledParagraph>
-              <GetstartedButtonWraper>
+              </p>
+              <div>
                 <Link href="/about">
                   <Button
                     variant="outlined"
@@ -118,18 +109,18 @@ const GetStarted = () => {
                     Get started
                   </Button>
                 </Link>
-              </GetstartedButtonWraper>
+              </div>
             </LeftSideWrapper>
           </Grid>
           <Grid
             item
             xs={12}
-            md={6}
+            md={5}
             container
             justifyContent="center"
             alignItems="center"
           >
-            <StyledImage src="/imgs/getStarted.png" alt="some img" />
+            <img src="/imgs/getStarted.png" alt="some img" />
           </Grid>
         </Grid>
       </GetstartedWrapper>

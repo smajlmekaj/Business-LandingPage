@@ -2,63 +2,68 @@ import { Container, Grid } from '@mui/material';
 import React from 'react';
 import styled from '@emotion/styled';
 
-const SectionWrapper = styled('div')(({ theme }) => ({
-  background: '#fafef5',
-  margin: '50px 0 0 0',
-  padding: ' 50px 0',
-  height: 'auto',
-}));
-
-const GetToKnowUsWrapper = styled('div')(({ theme }) => ({
-  [theme.breakpoints.up('sm')]: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  [theme.breakpoints.up('lg')]: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    textAlign: 'left',
-    padding: '0 200px 0 0',
-  },
-  [theme.breakpoints.down('md')]: {
-    margin: '0 50px 0 50px',
-  },
-}));
-
-const StyledImage = styled('div')(({ theme }) => ({
-  img: {
-    width: '100%',
-    maxWidth: '576px',
-    height: 'auto',
-    maxHeight: '496px',
-    margin: '20px 0',
-  },
-  [theme.breakpoints.up('lg')]: {
-    width: '576px',
-  },
-}));
-
-const StyledHeadingSix = styled.h6`
-  font-weight: 600;
-  font-size: 16px;
-  color: #22b56b;
-  text-align: center;
+const SectionWrapper = styled.div`
+  background: #fafef5;
+  margin: 50px 0 0 0;
+  padding: 50px 0;
+  height: auto;
 `;
-const StyledHeadingThree = styled.h3`
-  font-weight: 600;
-  font-size: 36px;
-  letter-spacing: -0.02em;
-  color: #101828;
-  text-align: center;
-  margin: 12px 0 20px 0;
+
+const GetToKnowUsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h6 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #22b56b;
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.02em;
+    color: #101828;
+    text-align: center;
+    margin: 12px 0 20px 0;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    color: #667085;
+    text-align: left;
+    line-height: 30px;
+  }
+
+  @media (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0 60px 0 0;
+    p {
+      font-size: 20px;
+    }
+  }
 `;
-const StyledParagraph = styled.div`
-  font-weight: 400;
-  font-size: 18px;
-  color: #667085;
-  text-align: left;
+
+const StyledImage = styled.div`
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 576px;
+    max-height: 496px;
+    margin: 20px 0;
+  }
+
+  @media (min-width: 1200px) {
+    width: 576px;
+  }
 `;
 
 const GetToKnowUs = () => {
@@ -90,11 +95,9 @@ const GetToKnowUs = () => {
             justifyContent="center"
           >
             <GetToKnowUsWrapper>
-              <StyledHeadingSix>Get to know us</StyledHeadingSix>
-              <StyledHeadingThree>
-                We're just getting started
-              </StyledHeadingThree>
-              <StyledParagraph>
+              <h6>Get to know us</h6>
+              <h3>We're just getting started</h3>
+              <p>
                 Untitled is growing fast, and we are always looking
                 for passionate, dynamic, and talented individuals to
                 join our distributed team all around the world.
@@ -103,7 +106,7 @@ const GetToKnowUs = () => {
                 Our philisophy is simple — hire a team of diverse,
                 passionate people and foster a culture that empowers
                 you to do you best work. Read more about.
-              </StyledParagraph>
+              </p>
             </GetToKnowUsWrapper>
           </Grid>
           <Grid item xs={12}>
