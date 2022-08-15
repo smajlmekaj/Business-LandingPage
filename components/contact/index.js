@@ -3,7 +3,10 @@ import Link from 'next/link';
 import { TextField, Checkbox, Button } from '@material-ui/core';
 import { Field, Form, Formik } from 'formik';
 import { boolean, number, object, string } from 'yup';
-import MuiPhoneNumber from 'material-ui-phone-number-2';
+// import MuiPhoneNumber from 'material-ui-phone-number-2';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/bootstrap.css';
+
 import { Box, Container, Typography } from '@mui/material';
 
 //
@@ -18,7 +21,7 @@ const MaterialFormWrapper = styled('div')(({ theme }) => ({
   color: '#667085',
 
   '.MuiFormControl-root': {
-    margin: '10px 0',
+    margin: '6px 0 24px 0',
   },
 
   h5: {
@@ -210,26 +213,24 @@ const MaterialForm = () => {
                   helperText={Boolean(touched.email) && errors.email}
                 />
 
+                <StyledSpan>Phone number</StyledSpan>
+
                 <Field
                   name="phone"
                   type="phone"
-                  as={MuiPhoneNumber}
-                  regions={[
-                    'america',
-                    'europe',
-                    'asia',
-                    'oceania',
-                    'africa',
-                  ]}
-                  defaultCountry={'us'}
+                  as={PhoneInput}
+                  placeholder="+1 (555) 000-0000"
                   value={values.phone}
+                  containerStyle={{ margin: '5px 0 24px 0' }}
+                  inputStyle={{
+                    width: '100%',
+                    height: '44px',
+                  }}
                   onChange={(event) => setFieldValue('phone', event)}
                   error={
                     Boolean(errors.phone) && Boolean(touched.phone)
                   }
                   helperText={Boolean(touched.phone) && errors.phone}
-                  fullWidth
-                  style={{ margin: '20px 0' }}
                 />
 
                 <StyledSpan>Message</StyledSpan>
