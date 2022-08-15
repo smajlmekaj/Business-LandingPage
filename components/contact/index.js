@@ -14,9 +14,13 @@ const MaterialFormWrapper = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-
   margin: '40px',
   color: '#667085',
+
+  '.MuiFormControl-root': {
+    margin: '10px 0',
+  },
+
   h5: {
     color: 'black',
   },
@@ -57,7 +61,6 @@ const NameWrapper = styled('div')(({ theme }) => ({
 
 const StyledSpan = styled.span`
   font-weight: 500;
-  margin: 10px 0;
   font-size: 14px;
   color: #344054;
 `;
@@ -158,7 +161,7 @@ const MaterialForm = () => {
                       variant="outlined"
                       size="small"
                       color="primary"
-                      label="First name"
+                      placeholder="First name"
                       fullWidth
                       error={
                         Boolean(errors.name) && Boolean(touched.name)
@@ -178,7 +181,7 @@ const MaterialForm = () => {
                       variant="outlined"
                       size="small"
                       color="primary"
-                      label="Last name"
+                      placeholder="Last name"
                       fullWidth
                       error={
                         Boolean(errors.lastName) &&
@@ -199,7 +202,7 @@ const MaterialForm = () => {
                   variant="outlined"
                   size="small"
                   color="primary"
-                  label="you@company.com"
+                  placeholder="you@company.com"
                   fullWidth
                   error={
                     Boolean(errors.email) && Boolean(touched.email)
@@ -238,7 +241,7 @@ const MaterialForm = () => {
                   variant="outlined"
                   size="small"
                   color="primary"
-                  label="Leave us a message..."
+                  placeholder="Leave us a message..."
                   fullWidth
                   error={
                     Boolean(errors.message) &&
