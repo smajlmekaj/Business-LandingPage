@@ -3,10 +3,8 @@ import Link from 'next/link';
 import { TextField, Checkbox, Button } from '@material-ui/core';
 import { Field, Form, Formik } from 'formik';
 import { boolean, number, object, string } from 'yup';
-// import MuiPhoneNumber from 'material-ui-phone-number-2';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/bootstrap.css';
-
 import { Box, Container, Typography } from '@mui/material';
 
 //
@@ -32,7 +30,7 @@ const MaterialFormWrapper = styled('div')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     padding: '12px',
-    minWidth: '350px',
+    minWidth: '240px',
     borderRadius: '8px',
     margin: '32px',
   },
@@ -258,17 +256,12 @@ const MaterialForm = () => {
                     name="checkBox"
                     type="checkBox"
                     as={Checkbox}
-                    error={
-                      Boolean(errors.checkBox) &&
-                      Boolean(touched.checkBox)
-                    }
                   />
                   You agree to our friendly
                   <Link href="/privacy">
                     <span className="privacy"> privacy policy.</span>
                   </Link>
                 </CheckedSpan>
-
                 <Button
                   type="submit"
                   variant="contained"

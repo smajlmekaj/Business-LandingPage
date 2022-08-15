@@ -69,7 +69,7 @@ const TopWrapper = styled('div')(({ theme }) => ({
 // *******************
 
 const Cookie = () => {
-  const [isOpne, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     let flag = localStorage.getItem('showModal') == 'true';
@@ -83,7 +83,7 @@ const Cookie = () => {
     localStorage.setItem('showModal', 'true');
   };
 
-  if (isOpne == false) {
+  if (isOpen == false) {
     return null;
   }
 
