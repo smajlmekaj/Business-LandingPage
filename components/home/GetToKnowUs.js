@@ -62,7 +62,9 @@ const StyledImage = styled.div`
   }
 
   @media (min-width: 1200px) {
-    width: 576px;
+    img {
+      width: 576px;
+    }
   }
 `;
 
@@ -82,7 +84,7 @@ const GetToKnowUs = () => {
               xl: 'center',
             },
             margin: {
-              lg: '50px',
+              lg: '50px 0  50px 50px',
             },
           }}
         >
@@ -90,7 +92,6 @@ const GetToKnowUs = () => {
             item
             xs={12}
             lg={6}
-            container
             alignItems="center"
             justifyContent="center"
           >
