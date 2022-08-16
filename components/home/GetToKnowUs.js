@@ -71,8 +71,7 @@ const GetToKnowUs = () => {
     <SectionWrapper>
       <Container maxWidth="xl">
         <Grid
-          conainer
-          height="auto"
+          container
           alignItems="center"
           justifyContent="center"
           sx={{
@@ -90,6 +89,7 @@ const GetToKnowUs = () => {
           <Grid
             item
             xs={12}
+            lg={6}
             container
             alignItems="center"
             justifyContent="center"
@@ -109,7 +109,7 @@ const GetToKnowUs = () => {
               </p>
             </GetToKnowUsWrapper>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} lg={6}>
             <StyledImage>
               <img src="/imgs/Contents.png" alt="some image" />
             </StyledImage>

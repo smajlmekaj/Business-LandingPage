@@ -45,7 +45,6 @@ const FaqQuestions = ({ title, description }) => {
             )
           }
           aria-controls="panel1a-content"
-          id="panel1a-header"
         >
           <Typography component="h2">{title}</Typography>
         </AccordionSummary>

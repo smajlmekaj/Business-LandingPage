@@ -90,7 +90,8 @@ const initalValues = {
   name: '',
   lastName: '',
   message: '',
-  checkBox: false,
+  phone: '',
+  checkbox: false,
 };
 
 const MaterialForm = () => {
@@ -140,7 +141,7 @@ const MaterialForm = () => {
                   7,
                   'Message should be minimum 7 characters long'
                 ),
-              checkBox: boolean().required(
+              checkbox: boolean().required(
                 'Please agree to our privacy policy'
               ),
               phone: number().required('Please leave a phone number'),
@@ -194,7 +195,6 @@ const MaterialForm = () => {
                     />
                   </div>
                 </NameWrapper>
-
                 <StyledSpan>Email</StyledSpan>
                 <Field
                   name="email"
@@ -210,9 +210,7 @@ const MaterialForm = () => {
                   }
                   helperText={Boolean(touched.email) && errors.email}
                 />
-
                 <StyledSpan>Phone number</StyledSpan>
-
                 <Field
                   name="phone"
                   type="phone"
@@ -230,7 +228,6 @@ const MaterialForm = () => {
                   }
                   helperText={Boolean(touched.phone) && errors.phone}
                 />
-
                 <StyledSpan>Message</StyledSpan>
                 <Field
                   name="message"
@@ -253,8 +250,8 @@ const MaterialForm = () => {
 
                 <CheckedSpan>
                   <Field
-                    name="checkBox"
-                    type="checkBox"
+                    name="checkbox"
+                    type="checkbox"
                     as={Checkbox}
                   />
                   You agree to our friendly
@@ -262,6 +259,7 @@ const MaterialForm = () => {
                     <span className="privacy"> privacy policy.</span>
                   </Link>
                 </CheckedSpan>
+
                 <Button
                   type="submit"
                   variant="contained"
