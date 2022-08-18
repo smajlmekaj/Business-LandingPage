@@ -15,8 +15,8 @@ const MaterialFormWrapper = styled('div')(({ theme }) => ({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'center',
-  margin: '40px',
   color: '#667085',
+  margin: '64px 0 96px 0',
 
   '.MuiFormControl-root': {
     margin: '6px 0 24px 0',
@@ -29,25 +29,16 @@ const MaterialFormWrapper = styled('div')(({ theme }) => ({
   form: {
     display: 'flex',
     flexDirection: 'column',
-    padding: '12px',
-    minWidth: '240px',
+    width: '100%',
     borderRadius: '8px',
-    margin: '32px',
-  },
-
-  '.input-2': {
-    input: {
-      height: '90px',
-    },
-  },
-
-  '.phone-container': {
-    width: '200px',
   },
 
   [theme.breakpoints.up('lg')]: {
     margin: '64px 0 96px 0',
     justifyContent: 'center',
+    form: {
+      margin: '32px',
+    },
   },
 }));
 
@@ -195,6 +186,7 @@ const MaterialForm = () => {
                     />
                   </div>
                 </NameWrapper>
+
                 <StyledSpan>Email</StyledSpan>
                 <Field
                   name="email"
@@ -210,6 +202,7 @@ const MaterialForm = () => {
                   }
                   helperText={Boolean(touched.email) && errors.email}
                 />
+
                 <StyledSpan>Phone number</StyledSpan>
                 <Field
                   name="phone"
@@ -228,13 +221,15 @@ const MaterialForm = () => {
                   }
                   helperText={Boolean(touched.phone) && errors.phone}
                 />
+
                 <StyledSpan>Message</StyledSpan>
                 <Field
                   name="message"
                   type="message"
-                  className="input-2"
                   as={TextField}
                   variant="outlined"
+                  multiline={true}
+                  minRows="5"
                   size="small"
                   color="primary"
                   placeholder="Leave us a message..."

@@ -20,7 +20,6 @@ const HomePage = () => {
   return (
     <div>
       <Home />
-      <Cookie />
     </div>
   );
 };

@@ -6,7 +6,6 @@ import Link from 'next/link';
 const GetstartedWrapper = styled.div`
   margin: 90px 0;
   border-radius: 20px;
-  max-width: 1300px;
 
   img {
     width: 100%;
@@ -17,7 +16,6 @@ const GetstartedWrapper = styled.div`
 
   @media (min-width: 1200px) {
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-left: 60px;
 
     img {
       width: 100%;

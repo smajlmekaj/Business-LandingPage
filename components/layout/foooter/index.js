@@ -12,10 +12,24 @@ const StyledBox = styled('div')(({ theme }) => ({
   height: 'auto',
   color: ' #ffffff',
   background: ' #22b56b',
-  [theme.breakpoints.up('lg')]: {
-    height: '207px',
-  },
 }));
+
+const DownloadButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  img {
+    width: 100%;
+    max-width: 120px;
+    &:nth-of-type(2) {
+      margin-left: 20px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    justify-content: flex-end;
+  }
+`;
 
 const StyledHeadingTwo = styled('h2')(({ theme }) => ({
   fontFamily: 'Poppins',
@@ -28,16 +42,17 @@ const StyledHeadingTwo = styled('h2')(({ theme }) => ({
   },
 }));
 
-const StyledParagraph = styled('div')(({ theme }) => ({
-  fontWeight: '400',
-  fontSize: '15px',
-  margin: '10px 0',
-  textAlign: 'center',
-  [theme.breakpoints.up('lg')]: {
-    fontSize: '20px',
-    textAlign: 'left',
-  },
-}));
+const StyledParagraph = styled.p`
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  margin: 10px 0 20px 0;
+  @media (min-width: 1200px) {
+    text-align: left;
+    font-size: 20px;
+    line-height: 30px;
+  }
+`;
 
 const StyledParagraphSmall = styled('div')(({ theme }) => ({
   fontWeight: '400',
@@ -48,7 +63,7 @@ const StyledParagraphSmall = styled('div')(({ theme }) => ({
   },
 }));
 
-const StyledParagraphSmallLink = styled('div')(({ theme }) => ({
+const StyledParagraphSmallLink = styled('p')(({ theme }) => ({
   fontWeight: '400',
   fontSize: '14px',
   textAlign: 'center',
@@ -58,7 +73,7 @@ const StyledParagraphSmallLink = styled('div')(({ theme }) => ({
     textAlign: 'left',
   },
   [theme.breakpoints.down('lg')]: {
-    margin: '20px 0',
+    marginTop: '15px',
     marginLeft: '30px',
     textAlign: 'left',
   },
@@ -73,7 +88,10 @@ const Footer = () => {
           alignItems="center"
           container
           sx={{
-            padding: '20px 0 15px 0',
+            padding: {
+              xs: '19px 0 25px 0',
+              lg: '39px 0 19px 0',
+            },
             borderBottom: '1px solid rgba(255,255,255,0.5)',
           }}
         >
@@ -87,39 +105,35 @@ const Footer = () => {
               analytics to help you convert.
             </StyledParagraph>
           </Grid>
-          <Grid
-            item
-            container
-            xs={12}
-            lg={3}
-            alignItems="center"
-            justifyContent="center"
-            sx={{
-              display: {
-                lg: 'flex',
-              },
-              justifyContent: {
-                lg: 'flex-end',
-                xs: 'center',
-              },
-            }}
-          >
-            <Image
-              src="/imgs/google-play.svg"
-              width="120px"
-              height="32px"
-            />
-            <Image
-              src="/imgs/app-store.svg"
-              width="120px"
-              height="32px"
-            />
+          <Grid item container xs={12} lg={3}>
+            <DownloadButtonWrapper>
+              <Link href="https://play.google.com/store/apps">
+                <img
+                  style={{ cursor: 'pointer' }}
+                  src="/imgs/google-play.svg"
+                  alt="some image"
+                />
+              </Link>
+
+              <Link href="https://www.apple.com/app-store/">
+                <img
+                  style={{ cursor: 'pointer' }}
+                  src="/imgs/app-store.svg"
+                  alt="some image"
+                />
+              </Link>
+            </DownloadButtonWrapper>
           </Grid>
         </Grid>
         <Grid
           container
           justifyContent="space-between"
-          sx={{ marginTop: '30px' }}
+          sx={{
+            margin: {
+              xs: '20px 0',
+              lg: '36px 0',
+            },
+          }}
         >
           <Grid
             item

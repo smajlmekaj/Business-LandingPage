@@ -11,7 +11,7 @@ const ServicesWrapper = styled.div`
   height: auto;
   display: flex;
   align-items: center;
-  margin: 100px 30px;
+  margin: 100px 0;
 `;
 
 const SecionWrapper = styled.div`
@@ -40,7 +40,6 @@ const StyledParagraph = styled.div`
   font-size: 16px;
   color: #667085;
   line-height: 24px;
-  padding: 0 50px;
   margin: 16px 0;
 `;
 

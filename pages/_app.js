@@ -2,6 +2,7 @@ import { Global, css } from '@emotion/react';
 import Layout from '../components/layout';
 import { ThemeProvider } from '@mui/material';
 import { theme } from './index';
+import Cookie from '../components/cookie';
 
 const GlobalStyles = css`
   * {
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <Layout>
         <Global styles={GlobalStyles} />
+        <Cookie />
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>

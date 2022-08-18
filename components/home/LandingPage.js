@@ -1,29 +1,32 @@
 import React from 'react';
-import Image from 'next/image';
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
-const LandingPageWrapper = styled('div')(({ theme }) => ({
-  [theme.breakpoints.up('xl')]: {
-    height: '840px',
-    maxHeight: '1000px',
-  },
-}));
+const LandingPageWrapper = styled.div`
+  background-image: linear-gradient(to bottom right, #25b46d, white);
+  height: auto;
+  padding-bottom: 50px;
+  position: relative;
+  @media (min-width: 1440px) {
+    height: 840px;
+    max-height: 1000px;
+  }
+`;
 
 const StyledImgFirst = styled('img')(({ theme }) => ({
-  width: '104%',
-  maxWidth: '900px',
+  width: '103.8%',
   marginTop: ' 50px',
+  overflow: 'hidden',
 
   [theme.breakpoints.up('lg ')]: {
-    width: '100%',
-    maxWidth: '700px',
     right: 0,
-    position: 'absolute',
     top: 0,
+    position: 'absolute',
   },
   [theme.breakpoints.up('xl')]: {
     right: 0,
+    maxWidth: '900px',
     position: 'absolute',
     top: '10px',
   },
@@ -42,8 +45,15 @@ const StyledHeading = styled('h1')(({ theme }) => ({
 
 const DownloadApp = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: flex-start;
   margin-top: 20px;
+  img {
+    width: 100%;
+    max-width: 120px;
+    &:nth-of-type(2) {
+      margin-left: 20px;
+    }
+  }
 `;
 
 const StyledParagraph = styled.div`
@@ -55,51 +65,57 @@ const StyledParagraph = styled.div`
 const LandingPage = () => {
   return (
     <LandingPageWrapper>
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="center"
-        direction="row-reverse"
-        sx={{
-          color: 'white',
-        }}
-      >
-        <Grid item sm={6} xs={12}>
-          <StyledImgFirst src="/imgs/mobile-mockup.png" />
-        </Grid>
+      <Container maxWidth="xl">
         <Grid
-          item
-          sm={6}
-          xs={12}
+          container
+          alignItems="center"
+          direction="row-reverse"
           sx={{
-            marginTop: '10px',
-            padding: {
-              lg: '0 0 0 50px',
-            },
+            color: 'white',
           }}
         >
-          <StyledHeading>
-            Present
-            <br /> Foodi App
-          </StyledHeading>
-          <StyledParagraph>
-            Powerful, self-serve product and growth
-            <br /> analytics to help you convert.
-          </StyledParagraph>
-          <DownloadApp>
-            <Image
-              src="/imgs/google-play.svg"
-              width="140px"
-              height="38px"
-            />
-            <Image
-              src="/imgs/app-store.svg"
-              width="140px"
-              height="38px"
-            />
-          </DownloadApp>
+          <Grid item sm={6} xs={12}>
+            <StyledImgFirst src="/imgs/mobile-mockup.png" />
+          </Grid>
+          <Grid
+            item
+            sm={6}
+            xs={12}
+            sx={{
+              marginTop: '10px',
+              padding: {
+                lg: '0 0 0 50px',
+              },
+            }}
+          >
+            <StyledHeading>
+              Present
+              <br /> Foodi App
+            </StyledHeading>
+            <StyledParagraph>
+              Powerful, self-serve product and growth
+              <br /> analytics to help you convert.
+            </StyledParagraph>
+            <DownloadApp>
+              <Link href="https://play.google.com/store/apps">
+                <img
+                  style={{ cursor: 'pointer', width: '100%' }}
+                  src="/imgs/google-play.svg"
+                  alt="some image"
+                />
+              </Link>
+
+              <Link href="https://www.apple.com/app-store/">
+                <img
+                  style={{ cursor: 'pointer' }}
+                  src="/imgs/app-store.svg"
+                  alt="some image"
+                />
+              </Link>
+            </DownloadApp>
+          </Grid>
         </Grid>
-      </Grid>
+      </Container>
     </LandingPageWrapper>
   );
 };

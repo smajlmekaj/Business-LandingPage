@@ -3,20 +3,15 @@ import styled from '@emotion/styled';
 import { Container } from '@mui/material';
 
 const ScreensWrapper = styled.div`
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(
-    to bottom right,
-    #25b46d,
-    #dcf2e6
-  );
-  padding-top: 30px;
+  background-image: linear-gradient(to bottom right, #25b46d, white);
 `;
 
 const StyledImages = styled.img`
-  width: 101%;
+  width: 100%;
+  margin: 67px 0 78px 0;
+  @media (max-width: 900px) {
+    margin: 37px 0 48px 0;
+  }
 `;
 
 const Screens = () => {

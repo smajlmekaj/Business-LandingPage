@@ -4,15 +4,17 @@ import styled from '@emotion/styled';
 
 const SectionWrapper = styled.div`
   background: #fafef5;
-  margin: 50px 0 0 0;
-  padding: 50px 0;
-  height: auto;
+  margin-top: 60px;
+  padding: 50px 10px;
+  @media (min-width: 1200px) {
+    padding: 100px 0;
+  }
 `;
 
 const GetToKnowUsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-bottom: 30px;
 
   h6 {
     font-weight: 600;
@@ -36,7 +38,7 @@ const GetToKnowUsWrapper = styled.div`
     font-weight: 400;
     font-size: 18px;
     color: #667085;
-    text-align: left;
+    text-align: center;
     line-height: 30px;
   }
 
@@ -45,25 +47,27 @@ const GetToKnowUsWrapper = styled.div`
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    padding: 0 60px 0 0;
     p {
       font-size: 20px;
+      text-align: left;
     }
   }
 `;
 
 const StyledImage = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
   img {
     width: 100%;
-    height: auto;
     max-width: 576px;
-    max-height: 496px;
-    margin: 20px 0;
   }
 
   @media (min-width: 1200px) {
     img {
-      width: 576px;
+      max-width: none;
+      padding-left: 20px;
     }
   }
 `;
@@ -74,8 +78,8 @@ const GetToKnowUs = () => {
       <Container maxWidth="xl">
         <Grid
           container
+          spacing={6}
           alignItems="center"
-          justifyContent="center"
           sx={{
             display: {
               sm: 'flex',
@@ -83,21 +87,12 @@ const GetToKnowUs = () => {
             justifyContent: {
               xl: 'center',
             },
-            margin: {
-              lg: '50px 0  50px 50px',
-            },
           }}
         >
-          <Grid
-            item
-            xs={12}
-            lg={6}
-            alignItems="center"
-            justifyContent="center"
-          >
+          <Grid item xs={12} lg={6}>
             <GetToKnowUsWrapper>
               <h6>Get to know us</h6>
-              <h3>We're just getting started</h3>
+              <h3>We&rsquo;re just getting started</h3>
               <p>
                 Untitled is growing fast, and we are always looking
                 for passionate, dynamic, and talented individuals to

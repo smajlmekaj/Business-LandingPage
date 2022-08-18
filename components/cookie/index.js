@@ -114,7 +114,9 @@ const Cookie = () => {
 
       <FlexOfTwo>
         <StyledButton onClick={handleClick}>Ok</StyledButton>
-        <p>Show more</p>
+        <Link href="/privacy">
+          <p>Show more</p>
+        </Link>
       </FlexOfTwo>
     </CookieWrapper>
   );
